@@ -1,0 +1,50 @@
+[
+  {
+    "id": "rec-1",
+    "name": "Durshika Balaraja",
+    "position": "Senior Technical Project Manager",
+    "company": "IronOne Technologies",
+    "relationship": "Direct Manager",
+    "image": "/testimonials/durshika.jpg",
+    "linkedinUrl": "https://www.linkedin.com/in/durshika-balaraja",
+    "date": "November 20, 2025",
+    "recommendation": "I had the pleasure of supervising Jathurshan during his internship as a Software Engineering Intern, and I can confidently say he has been an outstanding contributor to our team. From the very beginning, he showed strong enthusiasm to learn, take ownership, and consistently improve his skills. He quickly adapted to our technical environment, understood complex requirements, and delivered his tasks with focus, responsibility, and attention to detail. His ability to grasp both the technical and functional aspects of the work was impressive for someone at an intern level. What I appreciated most about Jathurshan was his positive attitude, professional work ethic, and genuine willingness to support the team whenever needed. Whether it was debugging, collaborating with QA, or working with senior engineers to enhance a feature, he approached every task with maturity and commitment. Jathurshan is dependable, proactive, and always open to feedback qualities that will take him far in his career. He has a strong foundation in software engineering, and I am confident he will be a valuable asset to any organization.",
+    "featured": true
+  },
+  {
+    "id": "rec-2",
+    "name": "Haathim Munas",
+    "position": "Software Engineer",
+    "company": "IronOne Technologies",
+    "relationship": "Colleague",
+    "image": "/testimonials/haathim.jpg",
+    "linkedinUrl": "https://www.linkedin.com/in/haathim-munas",
+    "date": "November 22, 2025",
+    "recommendation": "I had the pleasure of working with Jathurshan during his internship at IronOne. From the first day onwards, Jathurshan impressed us with his technical skills. He was always asking the right questions, which helped him improve as well as contribute to the project. He was always responsible with his work and committed immensely to the project. He was an excellent team member to have alongside us. I would wholeheartedly recommend Jathurshan to any position he decides to take on in the future.",
+    "featured": true
+  },
+  {
+    "id": "rec-3",
+    "name": "Shanilka Madushan",
+    "position": "Software Engineer",
+    "company": "IronOne Technologies",
+    "relationship": "Colleague",
+    "image": "/testimonials/shanilka.jpg",
+    "linkedinUrl": "https://www.linkedin.com/in/shanilka-madushan",
+    "date": "November 20, 2025",
+    "recommendation": "I had the pleasure of working closely with Jathurshan during his internship, and I'm happy to recommend him. From the start, he showed a strong commitment to learning, a friendly attitude, and a dependable work ethic. He consistently completed his tasks with accuracy and professionalism. Jathurshan collaborated exceptionally well with both the QA and Business Analyst teams, always communicating clearly and contributing meaningful ideas. His ability to understand requirements, solve problems efficiently, and deliver high-quality results made him stand out as a promising Software Engineer. I highly recommend Jathurshan for any Software Engineering role. His dedication, teamwork, and technical skills will serve him well in his career, and I wish him all the best in his future endeavors.",
+    "featured": true
+  },
+  {
+    "id": "rec-4",
+    "name": "Sukumar Kavishan",
+    "position": "Software Engineer",
+    "company": "IronOne Technologies",
+    "relationship": "Colleague",
+    "image": "/testimonials/sukumar.jpg",
+    "linkedinUrl": "https://www.linkedin.com/in/sukumar-kavishan",
+    "date": "November 17, 2025",
+    "recommendation": "I had the opportunity to work closely with Jathurshan during his internship at IronOne Technologies, and I was truly impressed by his hard work, accountability, and strong problem-solving ability. He consistently took ownership of his tasks, quickly understood requirements, and delivered high-quality work with a positive attitude. His dedication, reliability, and willingness to go the extra mile made him a valuable part of the team. I confidently recommend him for any software engineering role he pursues.",
+    "featured": false
+  }
+]

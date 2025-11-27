@@ -1,0 +1,56 @@
+[
+  {
+    "id": "exp-1",
+    "company": "IronOne",
+    "position": "Software Engineer Intern",
+    "location": "Colombo, Sri Lanka",
+    "type": "Internship",
+    "startDate": "2025-05-01",
+    "endDate": null,
+    "current": true,
+    "description": "Working on full-stack development projects, building scalable microservices, and implementing DevOps practices for enterprise applications.",
+    "responsibilities": [
+      "Developing and maintaining Spring Boot microservices for enterprise clients",
+      "Implementing RESTful APIs and integrating third-party services",
+      "Collaborating with senior engineers on system architecture and design",
+      "Participating in code reviews and contributing to technical documentation"
+    ],
+    "technologies": ["Spring Boot", "Java", "React", "Docker", "AWS", "PostgreSQL"]
+  },
+  {
+    "id": "exp-2",
+    "company": "IEEE",
+    "position": "Student Member",
+    "location": "University of Ruhuna",
+    "type": "Membership",
+    "startDate": "2024-09-01",
+    "endDate": null,
+    "current": true,
+    "description": "Active member participating in technical workshops, hackathons, and collaborative projects with fellow engineering students.",
+    "responsibilities": [
+      "Participating in IEEE Xtreme programming competition (achieved 19th place nationally, 245th globally)",
+      "Attending technical workshops and seminars on emerging technologies",
+      "Collaborating on student-led technology projects",
+      "Networking with industry professionals and fellow students"
+    ],
+    "technologies": ["C++", "Python", "Algorithm Design", "Problem Solving"]
+  },
+  {
+    "id": "exp-3",
+    "company": "IESL - Ruhuna Engineering Students Chapter",
+    "position": "Student Member",
+    "location": "University of Ruhuna",
+    "type": "Membership",
+    "startDate": "2024-09-01",
+    "endDate": null,
+    "current": true,
+    "description": "Engaged in professional development activities and engineering community initiatives at the Institution of Engineers Sri Lanka student chapter.",
+    "responsibilities": [
+      "Participating in technical seminars and professional development workshops",
+      "Engaging with industry professionals through guest lectures",
+      "Contributing to student chapter activities and events",
+      "Building professional network within engineering community"
+    ],
+    "technologies": ["Professional Development", "Leadership", "Communication"]
+  }
+]

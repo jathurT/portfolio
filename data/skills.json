@@ -1,0 +1,159 @@
+[
+  {
+    "category": "Backend Development",
+    "skills": [
+      {
+        "name": "Java",
+        "proficiency": 90,
+        "icon": "FaServer",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Spring Boot",
+        "proficiency": 88,
+        "icon": "FaServer",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "Python",
+        "proficiency": 85,
+        "icon": "FaServer",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Node.js",
+        "proficiency": 80,
+        "icon": "FaNode",
+        "yearsOfExperience": 2
+      }
+    ]
+  },
+  {
+    "category": "Frontend Development",
+    "skills": [
+      {
+        "name": "React",
+        "proficiency": 88,
+        "icon": "FaReact",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "Next.js",
+        "proficiency": 82,
+        "icon": "SiNextdotjs",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "TypeScript",
+        "proficiency": 85,
+        "icon": "SiTypescript",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "JavaScript",
+        "proficiency": 90,
+        "icon": "SiJavascript",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "HTML/CSS",
+        "proficiency": 92,
+        "icon": "SiJavascript",
+        "yearsOfExperience": 4
+      }
+    ]
+  },
+  {
+    "category": "Databases",
+    "skills": [
+      {
+        "name": "PostgreSQL",
+        "proficiency": 85,
+        "icon": "SiPostgresql",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "MySQL",
+        "proficiency": 88,
+        "icon": "SiPostgresql",
+        "yearsOfExperience": 3
+      },
+      {
+        "name": "MongoDB",
+        "proficiency": 80,
+        "icon": "SiMongodb",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "Neo4j",
+        "proficiency": 70,
+        "icon": "SiMongodb",
+        "yearsOfExperience": 1
+      }
+    ]
+  },
+  {
+    "category": "Machine Learning & Data Science",
+    "skills": [
+      {
+        "name": "Scikit-Learn",
+        "proficiency": 85,
+        "icon": "FaServer",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "TensorFlow",
+        "proficiency": 75,
+        "icon": "FaServer",
+        "yearsOfExperience": 1
+      },
+      {
+        "name": "PyTorch",
+        "proficiency": 70,
+        "icon": "FaServer",
+        "yearsOfExperience": 1
+      },
+      {
+        "name": "Pandas & NumPy",
+        "proficiency": 88,
+        "icon": "FaServer",
+        "yearsOfExperience": 2
+      }
+    ]
+  },
+  {
+    "category": "DevOps & Cloud",
+    "skills": [
+      {
+        "name": "Docker",
+        "proficiency": 85,
+        "icon": "FaDocker",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "AWS",
+        "proficiency": 78,
+        "icon": "FaAws",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "Jenkins",
+        "proficiency": 80,
+        "icon": "FaServer",
+        "yearsOfExperience": 2
+      },
+      {
+        "name": "Kubernetes",
+        "proficiency": 72,
+        "icon": "FaServer",
+        "yearsOfExperience": 1
+      },
+      {
+        "name": "Git/GitHub",
+        "proficiency": 92,
+        "icon": "FaGitAlt",
+        "yearsOfExperience": 4
+      }
+    ]
+  }
+]
