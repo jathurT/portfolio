@@ -13,6 +13,8 @@ export default function Recommendations() {
   const [direction, setDirection] = useState(0);
   const [expandedCards, setExpandedCards] = useState<{ [key: string]: boolean }>({});
   const [isPaused, setIsPaused] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
 
   // Auto-play carousel
   useEffect(() => {
@@ -47,6 +49,21 @@ export default function Recommendations() {
   const truncateText = (text: string, maxLength: number) => {
     if (text.length <= maxLength) return text;
     return text.slice(0, maxLength) + "...";
+  };
+
+  // Pagination logic
+  const totalPages = Math.ceil(recommendations.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedRecommendations = recommendations.slice(startIndex, endIndex);
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to the "All Recommendations" section
+    const allRecsSection = document.getElementById("all-recommendations");
+    if (allRecsSection) {
+      allRecsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
   // Slide variants for smooth animations
@@ -217,12 +234,12 @@ export default function Recommendations() {
         </div>
 
         {/* All Recommendations Grid */}
-        <div>
+        <div id="all-recommendations">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
             All Recommendations
           </h3>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {recommendations.map((rec, index) => (
+          <div className="grid sm:grid-cols-2 gap-6 mb-8">
+            {paginatedRecommendations.map((rec, index) => (
               <motion.div
                 key={rec.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -283,6 +300,57 @@ export default function Recommendations() {
               </motion.div>
             ))}
           </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="flex justify-center items-center gap-2 flex-wrap">
+              {/* Previous Button */}
+              <button
+                onClick={() => goToPage(currentPage - 1)}
+                disabled={currentPage === 1}
+                className="px-4 py-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 text-white"
+                style={{
+                  backgroundImage: currentPage === 1 ? "linear-gradient(to right, #9CA3AF, #9CA3AF)" : "linear-gradient(to right, #2E6F40, #00674F)"
+                }}
+              >
+                Previous
+              </button>
+
+              {/* Page Numbers */}
+              <div className="flex gap-2">
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => goToPage(page)}
+                    className={`w-10 h-10 rounded-lg font-medium transition-all hover:scale-105 ${
+                      currentPage === page
+                        ? "text-white shadow-lg"
+                        : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                    }`}
+                    style={
+                      currentPage === page
+                        ? { backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }
+                        : {}
+                    }
+                  >
+                    {page}
+                  </button>
+                ))}
+              </div>
+
+              {/* Next Button */}
+              <button
+                onClick={() => goToPage(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                className="px-4 py-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 text-white"
+                style={{
+                  backgroundImage: currentPage === totalPages ? "linear-gradient(to right, #9CA3AF, #9CA3AF)" : "linear-gradient(to right, #2E6F40, #00674F)"
+                }}
+              >
+                Next
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </SectionWrapper>

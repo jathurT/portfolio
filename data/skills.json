@@ -5,20 +5,32 @@
       {
         "name": "Java",
         "proficiency": 90,
-        "icon": "FaServer",
+        "icon": "FaJava",
         "yearsOfExperience": 3
       },
       {
         "name": "Spring Boot",
         "proficiency": 88,
-        "icon": "FaServer",
+        "icon": "SiSpring",
         "yearsOfExperience": 2
+      },
+      {
+        "name": "Quarkus",
+        "proficiency": 85,
+        "icon": "SiQuarkus",
+        "yearsOfExperience": 1
       },
       {
         "name": "Python",
         "proficiency": 85,
-        "icon": "FaServer",
+        "icon": "FaPython",
         "yearsOfExperience": 3
+      },
+      {
+        "name": "Go",
+        "proficiency": 75,
+        "icon": "SiGo",
+        "yearsOfExperience": 1
       },
       {
         "name": "Node.js",
@@ -58,7 +70,7 @@
       {
         "name": "HTML/CSS",
         "proficiency": 92,
-        "icon": "SiJavascript",
+        "icon": "SiHtml5",
         "yearsOfExperience": 4
       }
     ]
@@ -66,6 +78,12 @@
   {
     "category": "Databases",
     "skills": [
+      {
+        "name": "Oracle",
+        "proficiency": 82,
+        "icon": "SiOracle",
+        "yearsOfExperience": 1
+      },
       {
         "name": "PostgreSQL",
         "proficiency": 85,
@@ -75,7 +93,7 @@
       {
         "name": "MySQL",
         "proficiency": 88,
-        "icon": "SiPostgresql",
+        "icon": "SiMysql",
         "yearsOfExperience": 3
       },
       {
@@ -87,7 +105,7 @@
       {
         "name": "Neo4j",
         "proficiency": 70,
-        "icon": "SiMongodb",
+        "icon": "SiNeo4J",
         "yearsOfExperience": 1
       }
     ]
@@ -98,25 +116,25 @@
       {
         "name": "Scikit-Learn",
         "proficiency": 85,
-        "icon": "FaServer",
+        "icon": "SiScikitlearn",
         "yearsOfExperience": 2
       },
       {
         "name": "TensorFlow",
         "proficiency": 75,
-        "icon": "FaServer",
+        "icon": "SiTensorflow",
         "yearsOfExperience": 1
       },
       {
         "name": "PyTorch",
         "proficiency": 70,
-        "icon": "FaServer",
+        "icon": "SiPytorch",
         "yearsOfExperience": 1
       },
       {
         "name": "Pandas & NumPy",
         "proficiency": 88,
-        "icon": "FaServer",
+        "icon": "SiNumpy",
         "yearsOfExperience": 2
       }
     ]
@@ -139,13 +157,13 @@
       {
         "name": "Jenkins",
         "proficiency": 80,
-        "icon": "FaServer",
+        "icon": "SiJenkins",
         "yearsOfExperience": 2
       },
       {
         "name": "Kubernetes",
         "proficiency": 72,
-        "icon": "FaServer",
+        "icon": "SiKubernetes",
         "yearsOfExperience": 1
       },
       {
@@ -153,6 +171,23 @@
         "proficiency": 92,
         "icon": "FaGitAlt",
         "yearsOfExperience": 4
+      }
+    ]
+  },
+  {
+    "category": "Blockchain & Web3",
+    "skills": [
+      {
+        "name": "Blockchain",
+        "proficiency": 75,
+        "icon": "SiEthereum",
+        "yearsOfExperience": 1
+      },
+      {
+        "name": "Smart Contracts",
+        "proficiency": 70,
+        "icon": "SiSolidity",
+        "yearsOfExperience": 1
       }
     ]
   }

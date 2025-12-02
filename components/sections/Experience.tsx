@@ -50,11 +50,7 @@ export default function Experience() {
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full ring-4 ring-white dark:ring-gray-900 z-10" style={{ backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }} />
 
                 {/* Content Card */}
-                <div
-                  className={`w-full md:w-[calc(50%-2rem)] ${
-                    index % 2 === 0 ? "md:text-right" : ""
-                  }`}
-                >
+                <div className="w-full md:w-[calc(50%-2rem)]">
                   <motion.div
                     whileHover={{ scale: 1.02, y: -5 }}
                     className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
@@ -73,11 +69,7 @@ export default function Experience() {
                         <HiBriefcase size={20} />
                         <span>{exp.company}</span>
                       </div>
-                      <div
-                        className={`flex flex-wrap gap-3 text-sm text-gray-600 dark:text-gray-400 ${
-                          index % 2 === 0 ? "md:justify-end" : ""
-                        }`}
-                      >
+                      <div className="flex flex-wrap gap-3 text-sm text-gray-600 dark:text-gray-400">
                         <div className="flex items-center gap-1">
                           <HiLocationMarker size={16} />
                           <span>{exp.location}</span>
@@ -102,11 +94,7 @@ export default function Experience() {
                       <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                         Key Achievements:
                       </h4>
-                      <ul
-                        className={`space-y-2 ${
-                          index % 2 === 0 ? "md:text-right" : ""
-                        }`}
-                      >
+                      <ul className="space-y-2">
                         {exp.responsibilities.map((resp, i) => (
                           <li
                             key={i}

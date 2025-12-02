@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HiMail, HiUser, HiPencil, HiCheckCircle, HiXCircle } from "react-icons/hi";
 import SectionWrapper from "../ui/SectionWrapper";
@@ -20,6 +20,17 @@ export default function Contact() {
     message: string;
   }>({ type: null, message: "" });
 
+  // Auto-dismiss success/error messages after 5 seconds
+  useEffect(() => {
+    if (submitStatus.type) {
+      const timer = setTimeout(() => {
+        setSubmitStatus({ type: null, message: "" });
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus.type]);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -35,15 +46,24 @@ export default function Contact() {
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      const response = await fetch("/api/contact", {
+      // Prepare data for Web3Forms
+      const formPayload = {
+        access_key: "9fcce581-36da-4fdf-ae85-4c5738cd799a",
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formPayload),
       });
 
-      const data: EmailResponse = await response.json();
+      const data = await response.json();
 
       if (response.ok && data.success) {
         setSubmitStatus({

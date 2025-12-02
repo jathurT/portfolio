@@ -6,16 +6,17 @@
     "location": "Colombo, Sri Lanka",
     "type": "Internship",
     "startDate": "2025-05-01",
-    "endDate": null,
-    "current": true,
-    "description": "Working on full-stack development projects, building scalable microservices, and implementing DevOps practices for enterprise applications.",
+    "endDate": "2025-11-01",
+    "current": false,
+    "description": "Worked in the fintech domain on the Primary Dealer System in Sri Lanka, utilizing Quarkus and React with TypeScript. This experience was meaningful and contributed to my growth both technically and personally.",
     "responsibilities": [
-      "Developing and maintaining Spring Boot microservices for enterprise clients",
-      "Implementing RESTful APIs and integrating third-party services",
-      "Collaborating with senior engineers on system architecture and design",
-      "Participating in code reviews and contributing to technical documentation"
+      "Developed and maintained fintech applications using Quarkus framework for backend services",
+      "Built responsive frontend interfaces using React with TypeScript",
+      "Worked on the Primary Dealer System, a critical financial platform in Sri Lanka",
+      "Collaborated with cross-functional teams on system architecture and implementation",
+      "Contributed to technical documentation and participated in code reviews"
     ],
-    "technologies": ["Spring Boot", "Java", "React", "Docker", "AWS", "PostgreSQL"]
+    "technologies": ["Quarkus", "React", "TypeScript", "Java", "Fintech", "Primary Dealer System"]
   },
   {
     "id": "exp-2",
