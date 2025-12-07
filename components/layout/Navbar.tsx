@@ -19,12 +19,31 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Detect active section based on scroll position
+      const sections = navLinks.map(link => link.href.substring(1)); // Remove # from href
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            setActiveSection(sections[i]);
+            break;
+          }
+        }
+      }
     };
 
+    handleScroll(); // Call once on mount
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -71,19 +90,41 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-gray-700 dark:text-gray-300 transition-colors duration-300 font-medium"
-                onMouseEnter={(e) => e.currentTarget.style.color = '#2E6F40'}
-                onMouseLeave={(e) => e.currentTarget.style.color = ''}
-                whileHover={{ y: -2 }}
-              >
-                {link.name}
-              </motion.a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.substring(1);
+              return (
+                <motion.a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="relative text-gray-700 dark:text-gray-300 transition-colors duration-300 font-medium"
+                  style={{ color: isActive ? '#2E6F40' : '' }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) e.currentTarget.style.color = '#2E6F40';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) e.currentTarget.style.color = '';
+                  }}
+                  whileHover={{ y: -2 }}
+                >
+                  {link.name}
+                  {/* Animated underline indicator */}
+                  <motion.div
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
+                    style={{ backgroundColor: '#2E6F40' }}
+                    initial={false}
+                    animate={{
+                      scaleX: isActive ? 1 : 0,
+                      opacity: isActive ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    }}
+                  />
+                </motion.a>
+              );
+            })}
             <ThemeToggle />
           </div>
 
@@ -111,21 +152,43 @@ export default function Navbar() {
             className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800"
           >
             <div className="px-4 py-6 space-y-4">
-              {navLinks.map((link, index) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className="block text-gray-700 dark:text-gray-300 transition-colors duration-300 text-lg font-medium"
-                  onMouseEnter={(e) => e.currentTarget.style.color = '#2E6F40'}
-                  onMouseLeave={(e) => e.currentTarget.style.color = ''}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {link.name}
-                </motion.a>
-              ))}
+              {navLinks.map((link, index) => {
+                const isActive = activeSection === link.href.substring(1);
+                return (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className="relative block text-gray-700 dark:text-gray-300 transition-colors duration-300 text-lg font-medium pl-4"
+                    style={{ color: isActive ? '#2E6F40' : '' }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) e.currentTarget.style.color = '#2E6F40';
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) e.currentTarget.style.color = '';
+                    }}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    {/* Vertical indicator line for mobile */}
+                    <motion.div
+                      className="absolute left-0 top-0 bottom-0 w-1 rounded-r-full"
+                      style={{ backgroundColor: '#2E6F40' }}
+                      initial={false}
+                      animate={{
+                        scaleY: isActive ? 1 : 0,
+                        opacity: isActive ? 1 : 0,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        ease: "easeInOut",
+                      }}
+                    />
+                    {link.name}
+                  </motion.a>
+                );
+              })}
             </div>
           </motion.div>
         )}
