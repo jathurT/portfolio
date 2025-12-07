@@ -67,8 +67,8 @@ export default function Contact() {
 
       // Prepare template parameters that match form field names
       const templateParams = {
-        name: formData.name,
-        email: formData.email,
+        from_name: formData.name,
+        from_email: formData.email,
         subject: formData.subject,
         message: formData.message,
       };
