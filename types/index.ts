@@ -64,3 +64,15 @@ export interface Recommendation {
   recommendation: string;
   featured: boolean;
 }
+
+export interface Certification {
+  id: string;
+  name: string;
+  issuingOrganization: string;
+  issueDate: string;
+  credentialId: string;
+  credentialUrl: string;
+  skills: string[];
+  image: string;
+  description: string;
+}

@@ -1,0 +1,212 @@
+[
+  {
+    "id": "cert-1",
+    "name": "Complete Python For Absolute Beginners",
+    "issuingOrganization": "Udemy",
+    "issueDate": "2024-08",
+    "credentialId": "UC-41a8cbea-ce55-4049-a75e-98f06ae177d1",
+    "credentialUrl": "https://www.udemy.com/certificate/UC-41a8cbea-ce55-4049-a75e-98f06ae177d1/",
+    "skills": ["Python (Programming Language)"],
+    "description": "Comprehensive Python fundamentals covering syntax, data structures, functions, OOP principles, and practical application development for real-world programming scenarios."
+  },
+  {
+    "id": "cert-2",
+    "name": "Supervised Machine Learning: Regression and Classification",
+    "issuingOrganization": "DeepLearning.AI",
+    "issueDate": "2024-09",
+    "credentialId": "9d3e81b504c7fb472931ca59d89fc92f",
+    "credentialUrl": "https://coursera.org/share/9d3e81b504c7fb472931ca59d89fc92f",
+    "skills": ["Supervised Learning", "Linear Regression"],
+    "description": "Industry-leading ML course by Andrew Ng covering linear regression, logistic regression, neural networks, and best practices for building production-ready ML systems."
+  },
+  {
+    "id": "cert-4",
+    "name": "SQL (Advanced)",
+    "issuingOrganization": "HackerRank",
+    "issueDate": "2024-09",
+    "credentialId": "0da687d8b2f6",
+    "credentialUrl": "https://www.hackerrank.com/certificates/0da687d8b2f6",
+    "skills": ["SQL", "Advanced SQL"],
+    "description": "Advanced SQL proficiency including complex joins, subqueries, window functions, query optimization, and database performance tuning for enterprise applications."
+  },
+  {
+    "id": "cert-5",
+    "name": "Advanced Learning Algorithms",
+    "issuingOrganization": "DeepLearning.AI",
+    "issueDate": "2024-12",
+    "credentialId": "JBNVBIQ4ZXEL",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/JBNVBIQ4ZXEL",
+    "skills": ["TensorFlow", "Tree Ensembles"],
+    "description": "Deep dive into decision trees, random forests, XGBoost, and neural network architectures using TensorFlow for building sophisticated ML models at scale."
+  },
+  {
+    "id": "cert-7",
+    "name": "JUnit and Mockito Unit Testing for Java Developers",
+    "issuingOrganization": "Packt",
+    "issueDate": "2025-01",
+    "credentialId": "D4KJ90YRILGB",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/D4KJ90YRILGB",
+    "skills": ["JUnit", "Mockito", "Unit Testing", "Java"],
+    "description": "Comprehensive testing framework training covering unit testing, mocking, test-driven development, and implementing robust automated testing strategies for Java applications."
+  },
+  {
+    "id": "cert-8",
+    "name": "Jenkins Essential Training",
+    "issuingOrganization": "LinkedIn",
+    "issueDate": "2025-02",
+    "credentialId": "7dc3b637d935a02bbded7d8b35ae330253c9f4e73f4e30c0f89",
+    "credentialUrl": "https://www.linkedin.com/learning/certificates/7dc3b637d935a02bbded7d8b35ae330253c9f4e73f4e30c0f89",
+    "skills": ["Jenkins"],
+    "description": "Complete Jenkins automation covering pipeline creation, build automation, continuous integration/deployment workflows, and DevOps best practices for modern development teams."
+  },
+  {
+    "id": "cert-9",
+    "name": "Introduction to Spring AI",
+    "issuingOrganization": "LinkedIn",
+    "issueDate": "2025-02",
+    "credentialId": "054036faee26a21d8895296fd19d7c7cfbbb3f56271f5890eabc23f",
+    "credentialUrl": "https://www.linkedin.com/learning/certificates/054036faee26a21d8895296fd19d7c7cfbbb3f56271f5890eabc23f",
+    "skills": ["Spring AI", "Spring Framework"],
+    "description": "Cutting-edge Spring AI integration covering LLM integration, AI-powered microservices, vector databases, and building intelligent Spring Boot applications with modern AI capabilities."
+  },
+  {
+    "id": "cert-10",
+    "name": "Docker Basics for DevOps",
+    "issuingOrganization": "KodeKloud",
+    "issueDate": "2025-02",
+    "credentialId": "KLHA1874DSBU",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/KLHA1874DSBU",
+    "skills": ["Docker", "DevOps"],
+    "description": "Hands-on Docker containerization training covering image creation, container orchestration, networking, volumes, Docker Compose, and deployment strategies for scalable applications."
+  },
+  {
+    "id": "cert-11",
+    "name": "Advanced Spring: Spring Boot Actuator",
+    "issuingOrganization": "LinkedIn",
+    "issueDate": "2025-02",
+    "credentialId": "9421ab6634d7a08b163fe6eef647ced829b7f10748ba506e3c",
+    "credentialUrl": "https://www.linkedin.com/learning/certificates/9421ab6634d7a08b163fe6eef647ced829b7f10748ba506e3c",
+    "skills": ["Spring Boot", "Actuator"],
+    "description": "Advanced Spring Boot monitoring and management using Actuator endpoints, custom metrics, health checks, and production-ready observability for enterprise microservices."
+  },
+  {
+    "id": "cert-12",
+    "name": "Unsupervised Learning, Recommenders, Reinforcement Learning",
+    "issuingOrganization": "DeepLearning.AI",
+    "issueDate": "2025-03",
+    "credentialId": "cf47beb12262b077d1c3d6e068c94d5e",
+    "credentialUrl": "https://coursera.org/share/cf47beb12262b077d1c3d6e068c94d5e",
+    "skills": ["Anomaly Detection", "Unsupervised Learning"],
+    "description": "Expert-level ML course covering clustering algorithms, dimensionality reduction, recommender systems, and reinforcement learning for building intelligent autonomous systems."
+  },
+  {
+    "id": "cert-13",
+    "name": "The Ultimate React Course 2024: React, Next.js, Redux & More",
+    "issuingOrganization": "Udemy",
+    "issueDate": "2025-03",
+    "credentialId": "UC-075c761d-76b7-4c3e-8263-3b677e081e4b",
+    "credentialUrl": "https://www.udemy.com/certificate/UC-075c761d-76b7-4c3e-8263-3b677e081e4b/",
+    "skills": ["React.js", "redux"],
+    "description": "Complete modern React ecosystem mastery including hooks, context, Redux Toolkit, Next.js, React Query, TypeScript integration, and advanced patterns for production applications."
+  },
+  {
+    "id": "cert-15",
+    "name": "C++ Intermediate",
+    "issuingOrganization": "Sololearn",
+    "issueDate": "2023-08",
+    "credentialId": "CC-UCRUBS4B",
+    "credentialUrl": "https://www.sololearn.com/certificates/CC-UCRUBS4B",
+    "skills": ["C++ intermediate", "Object-Oriented Programming (OOP)"],
+    "description": "Intermediate C++ proficiency covering advanced OOP concepts, templates, STL, memory management, and design patterns for building robust system-level applications."
+  },
+  {
+    "id": "cert-18",
+    "name": "Introduction to C#",
+    "issuingOrganization": "Sololearn",
+    "issueDate": "2023-09",
+    "credentialId": "CC-WF87WUJZ",
+    "credentialUrl": "https://www.sololearn.com/certificates/CC-WF87WUJZ",
+    "skills": ["C#"],
+    "description": "Foundational C# programming covering syntax, OOP principles, .NET framework essentials, and application development for Windows and cross-platform solutions."
+  },
+  {
+    "id": "cert-19",
+    "name": "Problem Solving (Basic)",
+    "issuingOrganization": "HackerRank",
+    "issueDate": "2024-08",
+    "credentialId": "e54ae9beb879",
+    "credentialUrl": "https://www.hackerrank.com/certificates/e54ae9beb879",
+    "skills": ["Data Structures", "Creative Problem Solving"],
+    "description": "Algorithmic problem-solving expertise covering data structures, complexity analysis, optimization techniques, and computational thinking for efficient solution design."
+  },
+  {
+    "id": "cert-20",
+    "name": "Git for Beginners",
+    "issuingOrganization": "Udemy",
+    "issueDate": "2024-08",
+    "credentialId": "UC-635d41d6-3cf1-4bb4-a740-ade2d9b68f84",
+    "credentialUrl": "https://www.udemy.com/certificate/UC-635d41d6-3cf1-4bb4-a740-ade2d9b68f84/",
+    "skills": ["GitHub", "Git"],
+    "description": "Version control mastery covering Git workflows, branching strategies, conflict resolution, collaboration best practices, and GitHub integration for team development."
+  },
+  {
+    "id": "cert-21",
+    "name": "Java (Basic)",
+    "issuingOrganization": "HackerRank",
+    "issueDate": "2025-07",
+    "credentialId": "ea77f4b9687cd",
+    "credentialUrl": "https://www.hackerrank.com/certificates/ea77f4b9687cd",
+    "skills": ["Core Java", "Data Structures"],
+    "description": "Core Java programming proficiency including OOP fundamentals, collections framework, exception handling, multithreading, and building scalable enterprise applications."
+  },
+  {
+    "id": "cert-22",
+    "name": "Neural Networks and Deep Learning",
+    "issuingOrganization": "DeepLearning.AI",
+    "issueDate": "2025-03",
+    "credentialId": "NLMA7575H5TE",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/NLMA7575H5TE",
+    "skills": ["Artificial Neural Network"],
+    "description": "Deep learning foundations covering neural network architecture, backpropagation, activation functions, regularization, and building image recognition systems with TensorFlow."
+  },
+  {
+    "id": "cert-23",
+    "name": "Machine Learning",
+    "issuingOrganization": "Stanford University",
+    "issueDate": "2025-03",
+    "credentialId": "8ERK2Z8DOC03",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/8ERK2Z8DOC03",
+    "skills": ["Artificial Neural Network", "Linear Regression"],
+    "description": "Stanford's prestigious ML specialization by Andrew Ng covering supervised/unsupervised learning, neural networks, best practices, and building production ML systems."
+  },
+  {
+    "id": "cert-24",
+    "name": "Learning NGINX",
+    "issuingOrganization": "LinkedIn",
+    "issueDate": "2025-03",
+    "credentialId": "7c42f25cebb81876f88ae9fec347e5f6baef72b4710ff4f31ce40",
+    "credentialUrl": "https://www.linkedin.com/learning/certificates/7c42f25cebb81876f88ae9fec347e5f6baef72b4710ff4f31ce40",
+    "skills": ["Nginx"],
+    "description": "High-performance web server configuration covering reverse proxy setup, load balancing, SSL/TLS implementation, caching strategies, and optimizing for production environments."
+  },
+  {
+    "id": "cert-25",
+    "name": "AWS Cloud Technical Essentials",
+    "issuingOrganization": "Amazon Web Services (AWS)",
+    "issueDate": "2025-03",
+    "credentialId": "41YP2SYB5BMN",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/41YP2SYB5BMN",
+    "skills": ["AWS", "Cloud Computing"],
+    "description": "AWS fundamentals covering core services (EC2, S3, RDS), cloud architecture principles, security best practices, and designing scalable cloud-native applications on AWS."
+  },
+  {
+    "id": "cert-26",
+    "name": "Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization",
+    "issuingOrganization": "DeepLearning.AI",
+    "issueDate": "2025-04",
+    "credentialId": "C23WWQE41A2S",
+    "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/C23WWQE41A2S",
+    "skills": ["TensorFlow", "Machine Learning Algorithms"],
+    "description": "Advanced deep learning optimization covering hyperparameter tuning, regularization techniques, batch normalization, gradient descent variants, and building high-performance neural networks."
+  }
+]

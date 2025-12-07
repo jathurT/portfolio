@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HiMail, HiUser, HiPencil, HiCheckCircle, HiXCircle } from "react-icons/hi";
+import emailjs from "@emailjs/browser";
 import SectionWrapper from "../ui/SectionWrapper";
 import Button from "../ui/Button";
-import { ContactFormData, EmailResponse } from "@/types";
+import { ContactFormData } from "@/types";
 
 export default function Contact() {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -19,6 +20,14 @@ export default function Contact() {
     type: "success" | "error" | null;
     message: string;
   }>({ type: null, message: "" });
+
+  // Initialize EmailJS when component mounts
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+  }, []);
 
   // Auto-dismiss success/error messages after 5 seconds
   useEffect(() => {
@@ -40,47 +49,62 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus({ type: null, message: "" });
 
     try {
-      // Prepare data for Web3Forms
-      const formPayload = {
-        access_key: "9fcce581-36da-4fdf-ae85-4c5738cd799a",
+      // EmailJS configuration
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
+      // Validate environment variables
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS configuration is missing. Please check your environment variables.");
+      }
+
+      // Prepare template parameters that match form field names
+      const templateParams = {
         name: formData.name,
         email: formData.email,
         subject: formData.subject,
         message: formData.message,
       };
 
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formPayload),
-      });
+      // Send email using EmailJS with template parameters
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+      if (response.status === 200) {
         setSubmitStatus({
           type: "success",
-          message: "Thank you! Your message has been sent successfully.",
+          message: "Thank you! Your message has been sent successfully. I'll get back to you soon!",
         });
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setSubmitStatus({
-          type: "error",
-          message: data.message || "Something went wrong. Please try again.",
-        });
+        throw new Error("Failed to send email. Status: " + response.status);
       }
-    } catch (error) {
+    } catch (error: any) {
+      console.error("EmailJS Error Details:", error);
+
+      let errorMessage = "Failed to send message. Please try again later.";
+
+      // More specific error messages
+      if (error.text) {
+        errorMessage = `Error: ${error.text}`;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+
       setSubmitStatus({
         type: "error",
-        message: "Failed to send message. Please try again later.",
+        message: errorMessage,
       });
     } finally {
       setIsSubmitting(false);

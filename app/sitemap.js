@@ -34,6 +34,12 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/#certifications`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/#recommendations`,
       lastModified: currentDate,
       changeFrequency: 'monthly',

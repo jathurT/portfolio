@@ -126,12 +126,6 @@
         "yearsOfExperience": 1
       },
       {
-        "name": "PyTorch",
-        "proficiency": 70,
-        "icon": "SiPytorch",
-        "yearsOfExperience": 1
-      },
-      {
         "name": "Pandas & NumPy",
         "proficiency": 88,
         "icon": "SiNumpy",
@@ -171,23 +165,6 @@
         "proficiency": 92,
         "icon": "FaGitAlt",
         "yearsOfExperience": 4
-      }
-    ]
-  },
-  {
-    "category": "Blockchain & Web3",
-    "skills": [
-      {
-        "name": "Blockchain",
-        "proficiency": 75,
-        "icon": "SiEthereum",
-        "yearsOfExperience": 1
-      },
-      {
-        "name": "Smart Contracts",
-        "proficiency": 70,
-        "icon": "SiSolidity",
-        "yearsOfExperience": 1
       }
     ]
   }
