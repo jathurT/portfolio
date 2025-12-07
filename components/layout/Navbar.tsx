@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
+  { name: "Achievements", href: "#achievements" },
   { name: "Certifications", href: "#certifications" },
   { name: "Recommendations", href: "#recommendations" },
   { name: "Contact", href: "#contact" },
@@ -50,18 +51,23 @@ export default function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    setIsMobileMenuOpen(false);
 
-    const element = document.querySelector(href);
+    const element = document.querySelector(href) as HTMLElement;
     if (element) {
       const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      // Use offsetTop for accurate position calculation regardless of current scroll
+      const offsetPosition = element.offsetTop - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
+      // Close mobile menu first
+      setIsMobileMenuOpen(false);
+
+      // Small delay to allow menu animation to start, then scroll
+      setTimeout(() => {
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 100);
     }
   };
 

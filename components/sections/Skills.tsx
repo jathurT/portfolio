@@ -10,6 +10,8 @@ import {
   FaServer,
   FaPython,
   FaJava,
+  FaCubes,
+  FaLink,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -70,6 +72,8 @@ const iconMap: { [key: string]: any } = {
   SiEthereum,
   SiSolidity,
   SiGo,
+  FaCubes,
+  FaLink,
 };
 
 export default function Skills() {

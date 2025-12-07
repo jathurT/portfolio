@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiAcademicCap, HiCalendar, HiExternalLink, HiCheckCircle, HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import SectionWrapper from "../ui/SectionWrapper";
+import CertificationModal from "../ui/CertificationModal";
 import certificationsData from "@/data/certifications.json";
 import { Certification as CertificationType } from "@/types";
 import { formatDate } from "@/lib/utils";
@@ -14,6 +15,8 @@ export default function Certifications() {
   const certifications = certificationsData as CertificationType[];
   const [selectedSkill, setSelectedSkill] = useState<string>("All");
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCertification, setSelectedCertification] = useState<CertificationType | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Extract all unique skills
   const allSkills = useMemo(() => {
@@ -57,6 +60,11 @@ export default function Certifications() {
         behavior: "smooth",
       });
     }
+  };
+
+  const handleCertificationClick = (certification: CertificationType) => {
+    setSelectedCertification(certification);
+    setIsModalOpen(true);
   };
 
   return (
@@ -140,7 +148,8 @@ export default function Certifications() {
               >
               <motion.div
                 whileHover={{ scale: 1.03, y: -5 }}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 h-full flex flex-col overflow-hidden"
+                onClick={() => handleCertificationClick(cert)}
+                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 h-full flex flex-col overflow-hidden cursor-pointer"
               >
                 {/* Certificate Image/Icon */}
                 <div className="relative h-28 bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 flex items-center justify-center">
@@ -200,6 +209,7 @@ export default function Certifications() {
                         href={cert.credentialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
                         className="flex items-center gap-1 text-sm font-semibold hover:underline transition-colors"
                         style={{ color: "#2E6F40" }}
                       >
@@ -286,6 +296,12 @@ export default function Certifications() {
           </motion.div>
         )}
       </div>
+
+      <CertificationModal
+        certification={selectedCertification}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </SectionWrapper>
   );
 }

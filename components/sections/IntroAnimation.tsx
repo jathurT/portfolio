@@ -379,7 +379,7 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
                 transition={{ duration: 0.1 }}
               />
             </div>
-            <div className="flex justify-between mt-3">
+            <div className="flex justify-between mt-6">
               <p className="text-white/60 text-sm font-light">
                 Loading Experience... {Math.round(progress)}%
               </p>

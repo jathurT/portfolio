@@ -76,3 +76,17 @@ export interface Certification {
   image: string;
   description: string;
 }
+
+export interface Achievement {
+  id: string;
+  title: string;
+  organization: string;
+  date: string;
+  rank: string;
+  description: string;
+  totalParticipants?: string;
+  globalRank?: string;
+  icon: string;
+  color: string;
+  category: string;
+}

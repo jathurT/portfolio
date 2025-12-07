@@ -1,5 +1,19 @@
 [
   {
+    "id": "project-8",
+    "title": "Student Management System",
+    "description": "Enterprise-grade student management system for educational institutions with comprehensive enrollment, scheduling, and attendance tracking",
+    "longDescription": "Developed a comprehensive enterprise-grade student management system that serves as a complete digital ecosystem for educational institutions, managing everything from student enrollment and course scheduling to real-time attendance tracking across multiple departments and organizational hierarchies. Built on Java with Quarkus framework for cloud-native performance and scalability, integrated PostgreSQL database with sophisticated entity relationships through JPA and Hibernate, and TypeScript frontend ensuring type safety and long-term maintainability. Implemented enterprise-level security architecture with Keycloak integration for identity management, four-tier role-based access control system (Admin, Department Admin, Lecturer, Student), custom JWT token processing with user claim extraction, and method-level security enforcement through custom annotations and filters. Features RESTful API design with comprehensive error handling and standardized response patterns.",
+    "technologies": ["Java", "Quarkus", "TypeScript", "PostgreSQL", "Keycloak", "Docker", "JPA", "Hibernate", "JWT", "REST API"],
+    "images": ["/images/projects/sms-1.jpg"],
+    "liveUrl": "",
+    "githubUrl": "https://github.com/jathurT/SMS-backend",
+    "featured": true,
+    "category": "Full Stack",
+    "startDate": "2025-05-01",
+    "endDate": "2025-06-30"
+  },
+  {
     "id": "project-1",
     "title": "DN Dental Clinic Booking Platform",
     "description": "Full-stack dental clinic management system with appointment booking and patient management",

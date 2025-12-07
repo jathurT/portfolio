@@ -167,5 +167,34 @@
         "yearsOfExperience": 4
       }
     ]
+  },
+  {
+    "category": "Blockchain & Web3",
+    "skills": [
+      {
+        "name": "Hyperledger Fabric",
+        "proficiency": 65,
+        "icon": "FaLink",
+        "yearsOfExperience": 0.5
+      },
+      {
+        "name": "Blockchain",
+        "proficiency": 70,
+        "icon": "FaCubes",
+        "yearsOfExperience": 1
+      },
+      {
+        "name": "Ethereum",
+        "proficiency": 60,
+        "icon": "SiEthereum",
+        "yearsOfExperience": 0.5
+      },
+      {
+        "name": "Solidity",
+        "proficiency": 55,
+        "icon": "SiSolidity",
+        "yearsOfExperience": 0.5
+      }
+    ]
   }
 ]

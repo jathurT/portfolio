@@ -1,0 +1,27 @@
+[
+  {
+    "id": "achievement-1",
+    "title": "HaXtreme 3.0 Hackathon",
+    "organization": "HaXtreme",
+    "date": "2024",
+    "rank": "5th Place",
+    "description": "Secured 5th place in the prestigious HaXtreme 3.0 Hackathon, competing against 93+ talented teams. Demonstrated exceptional problem-solving skills, innovative thinking, and technical expertise in a high-pressure competitive environment.",
+    "totalParticipants": "93+ teams",
+    "icon": "trophy",
+    "color": "#FFD700",
+    "category": "Hackathon"
+  },
+  {
+    "id": "achievement-2",
+    "title": "IEEE Xtreme 24-Hour Coding Competition",
+    "organization": "IEEE",
+    "date": "2024",
+    "rank": "19th Nationally",
+    "description": "Achieved 19th place nationally in the IEEE Xtreme 24-Hour Programming Competition, showcasing exceptional algorithmic thinking and endurance. Ranked 245th globally out of 8,784 competing teams from around the world, demonstrating world-class competitive programming skills.",
+    "totalParticipants": "8,784 teams globally",
+    "globalRank": "245th Globally",
+    "icon": "code",
+    "color": "#00629B",
+    "category": "Competitive Programming"
+  }
+]
