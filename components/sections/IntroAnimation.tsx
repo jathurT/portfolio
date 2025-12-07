@@ -355,7 +355,7 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
             className="mt-80 text-center"
           >
             <p className="text-white/90 text-2xl md:text-3xl font-light tracking-wider mb-2">
-              Full Stack Developer
+              Computer Engineering Undergraduate
             </p>
             <p className="text-white/60 text-sm md:text-base font-light tracking-wide">
               Building the future, one line at a time
