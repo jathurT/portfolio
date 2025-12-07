@@ -147,7 +147,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12"
           >
-            Results-driven Computer Engineering student with strong experience in full-stack development, microservices, machine learning, and DevOps. Passionate about AI, Data Science, and scalable software systems.
+            Results-driven Computer Engineering student with strong experience in full-stack development, microservices, machine learning, and DevOps. Passionate about AI, Data Science, blockchain technology, and building scalable software systems.
           </motion.p>
 
           <motion.div
