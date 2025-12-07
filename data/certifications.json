@@ -55,7 +55,7 @@
     "issuingOrganization": "LinkedIn",
     "issueDate": "2025-02",
     "credentialId": "7dc3b637d935a02bbded7d8b35ae330253c9f4e73f4e30c0f89",
-    "credentialUrl": "https://www.linkedin.com/learning/certificates/7dc3b637d935a02bbded7d8b35ae330253c9f4e73f4e30c0f89",
+    "credentialUrl": "https://www.linkedin.com/learning/certificates/7dc3b637a935a02bbded7c8b35ee330253c9f4e73f4e50c0f88a314e1a8549cf",
     "skills": ["Jenkins"],
     "description": "Complete Jenkins automation covering pipeline creation, build automation, continuous integration/deployment workflows, and DevOps best practices for modern development teams."
   },
@@ -65,7 +65,7 @@
     "issuingOrganization": "LinkedIn",
     "issueDate": "2025-02",
     "credentialId": "054036faee26a21d8895296fd19d7c7cfbbb3f56271f5890eabc23f",
-    "credentialUrl": "https://www.linkedin.com/learning/certificates/054036faee26a21d8895296fd19d7c7cfbbb3f56271f5890eabc23f",
+    "credentialUrl": "https://www.linkedin.com/learning/certificates/0540360aec26a21d889529fd19d7c7bfbb3f56271580eabc23f0d0a0cdc9e072",
     "skills": ["Spring AI", "Spring Framework"],
     "description": "Cutting-edge Spring AI integration covering LLM integration, AI-powered microservices, vector databases, and building intelligent Spring Boot applications with modern AI capabilities."
   },
@@ -85,7 +85,7 @@
     "issuingOrganization": "LinkedIn",
     "issueDate": "2025-02",
     "credentialId": "9421ab6634d7a08b163fe6eef647ced829b7f10748ba506e3c",
-    "credentialUrl": "https://www.linkedin.com/learning/certificates/9421ab6634d7a08b163fe6eef647ced829b7f10748ba506e3c",
+    "credentialUrl": "https://www.linkedin.com/learning/certificates/9421ab5634d7a08b1636ebcfe647ccefd829bf7f07488a506e3c6809206fd176",
     "skills": ["Spring Boot", "Actuator"],
     "description": "Advanced Spring Boot monitoring and management using Actuator endpoints, custom metrics, health checks, and production-ready observability for enterprise microservices."
   },
@@ -185,7 +185,7 @@
     "issuingOrganization": "LinkedIn",
     "issueDate": "2025-03",
     "credentialId": "7c42f25cebb81876f88ae9fec347e5f6baef72b4710ff4f31ce40",
-    "credentialUrl": "https://www.linkedin.com/learning/certificates/7c42f25cebb81876f88ae9fec347e5f6baef72b4710ff4f31ce40",
+    "credentialUrl": "https://www.linkedin.com/learning/certificates/7c42f25cebb81876f88ae9fe2347e5fd6ad72b471f0ff4f31cc40aeb5f5503ac",
     "skills": ["Nginx"],
     "description": "High-performance web server configuration covering reverse proxy setup, load balancing, SSL/TLS implementation, caching strategies, and optimizing for production environments."
   },
