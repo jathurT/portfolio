@@ -74,19 +74,21 @@ export default function About() {
             </h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
               <p>
-                I&apos;m a Computer Engineering undergraduate at the University of Ruhuna with a 3.91 GPA,
-                currently working as a Software Engineer Intern at IronOne. My journey in technology combines
-                academic excellence with hands-on experience in full-stack development, machine learning, and DevOps.
+                I&apos;m a passionate Computer Engineering undergraduate at the University of Ruhuna, maintaining a 3.91 GPA
+                while gaining hands-on industry experience as a Software Engineer Intern at IronOne. I thrive at the
+                intersection of innovation and technology, transforming complex problems into elegant, scalable solutions.
               </p>
               <p>
-                I specialize in building scalable software systems using Java Spring Boot, React, and modern cloud
-                technologies. My projects range from microservices architectures to machine learning applications,
-                with a particular focus on creating efficient, maintainable solutions.
+                My expertise spans <span className="font-semibold text-[#2E6F40] dark:text-emerald-400">full-stack development</span> with
+                Java Spring Boot and React, <span className="font-semibold text-[#2E6F40] dark:text-emerald-400">cloud-native architectures</span>,
+                and <span className="font-semibold text-[#2E6F40] dark:text-emerald-400">machine learning</span>. From building enterprise-grade
+                microservices to developing AI-powered applications, I bring both technical depth and creative problem-solving to every project.
               </p>
               <p>
-                Beyond coding, I&apos;m passionate about AI and Data Science, actively contributing to research
-                (published work on employee turnover prediction), and competing in hackathons (5th place in HaXtreme 3.0,
-                19th in IEEE Xtreme). I&apos;m always eager to learn new technologies and solve challenging problems.
+                Beyond coding, I&apos;m deeply engaged in competitive programming and research publication. Currently, I&apos;m expanding my
+                expertise into <span className="font-semibold text-[#2E6F40] dark:text-emerald-400">Blockchain Technology and Ethereum</span>,
+                exploring decentralized applications and smart contract development. I believe in continuous learning, collaborative innovation,
+                and writing code that makes a difference. Let&apos;s build something extraordinary together!
               </p>
             </div>
           </motion.div>
