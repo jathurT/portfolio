@@ -340,9 +340,9 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="absolute top-20 text-center"
+            className="absolute top-12 md:top-20 text-center px-4"
           >
-            <p className="text-white/60 text-lg md:text-xl font-light tracking-widest">
+            <p className="text-white/60 text-base md:text-lg lg:text-xl font-light tracking-widest">
               WELCOME TO
             </p>
           </motion.div>
@@ -352,12 +352,12 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="mt-80 text-center"
+            className="mt-40 md:mt-60 lg:mt-80 text-center px-4"
           >
-            <p className="text-white/90 text-2xl md:text-3xl font-light tracking-wider mb-2">
+            <p className="text-white/90 text-lg md:text-2xl lg:text-3xl font-light tracking-wider mb-2">
               Computer Engineering Undergraduate
             </p>
-            <p className="text-white/60 text-sm md:text-base font-light tracking-wide">
+            <p className="text-white/60 text-xs md:text-sm lg:text-base font-light tracking-wide">
               Building the future, one line at a time
             </p>
           </motion.div>
@@ -367,7 +367,7 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="absolute bottom-24 w-80 max-w-[90vw]"
+            className="absolute bottom-32 md:bottom-24 w-80 max-w-[90vw] px-4"
           >
             <div className="w-full h-2 bg-white/20 rounded-full overflow-hidden backdrop-blur-sm">
               <motion.div
@@ -379,8 +379,8 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
                 transition={{ duration: 0.1 }}
               />
             </div>
-            <div className="flex justify-between mt-6">
-              <p className="text-white/60 text-sm font-light">
+            <div className="flex justify-between mt-4 md:mt-6 gap-2">
+              <p className="text-white/60 text-xs md:text-sm font-light">
                 Loading Experience... {Math.round(progress)}%
               </p>
               {canSkip && (
@@ -388,7 +388,7 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   onClick={handleSkip}
-                  className="text-white/80 text-sm font-light hover:text-white transition-colors pointer-events-auto underline"
+                  className="text-white/80 text-xs md:text-sm font-light hover:text-white transition-colors pointer-events-auto underline"
                 >
                   Skip →
                 </motion.button>
@@ -401,9 +401,9 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 0.7, 0] }}
             transition={{ delay: 1.5, duration: 3, repeat: Infinity }}
-            className="absolute bottom-10 text-center space-y-2"
+            className="absolute bottom-6 md:bottom-10 text-center space-y-2 px-4"
           >
-            <p className="text-white/50 text-sm">
+            <p className="text-white/50 text-xs md:text-sm">
               Click the text • Hover the orbs • Drag to rotate
             </p>
           </motion.div>
