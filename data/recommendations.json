@@ -46,5 +46,17 @@
     "date": "November 17, 2025",
     "recommendation": "I had the opportunity to work closely with Jathurshan during his internship at IronOne Technologies, and I was truly impressed by his hard work, accountability, and strong problem-solving ability. He consistently took ownership of his tasks, quickly understood requirements, and delivered high-quality work with a positive attitude. His dedication, reliability, and willingness to go the extra mile made him a valuable part of the team. I confidently recommend him for any software engineering role he pursues.",
     "featured": false
+  },
+  {
+    "id": "rec-5",
+    "name": "Irantha Thilakarathna",
+    "position": "Technical Business Analyst",
+    "company": "IronOne Technologies",
+    "relationship": "Colleague",
+    "image": "/images/testimonials/irantha.jpg",
+    "linkedinUrl": "https://www.linkedin.com/in/irantha-thilakarathna",
+    "date": "December 7, 2025",
+    "recommendation": "I am pleased to recommend Jathurshan, who successfully completed his internship as a Software Engineering Intern in our team. As the Business Analyst working closely with him throughout his internship, I had the opportunity to observe his work, technical capability, and overall contribution to the team. From the very beginning, he demonstrated exceptional agility, quickly adapting to our fast-paced and highly dynamic environment. Unlike a typical intern who performs only assigned tasks, he consistently operated at a Software Engineer level, taking full ownership of his work, proactively identifying solutions, and delivering beyond expectations. He was highly solution-oriented, always willing to explore alternatives, refine approaches, and ensure that the final output met both technical and business requirements. His dedication to delivering the best possible solution was evident in every sprint. He collaborated well with a cross-functional team including other BAs, QAs, and developers. He was supportive and genuinely helpful, often stepping in to assist others and contributing to smooth delivery cycles. Based on his performance, I can confidently recommend him for any Software Engineering role. He has already demonstrated the mindset, capability, and agility needed to perform at an industry-ready level. He will undoubtedly be an asset to any team he joins.",
+    "featured": true
   }
 ]
