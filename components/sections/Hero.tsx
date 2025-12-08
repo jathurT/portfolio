@@ -120,14 +120,14 @@ export default function Hero() {
       >
         <div className="text-center">
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="font-semibold text-lg text-emerald-700 dark:text-emerald-400">
+            <span className="font-semibold text-base sm:text-lg text-emerald-700 dark:text-emerald-400">
               Hello, I&apos;m
             </span>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl md:text-7xl font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent"
             style={{ backgroundImage: "linear-gradient(to right, #2E6F40, #00674F, #214C00)" }}
           >
             Jathurshan Thadchanamoorthy
@@ -135,17 +135,17 @@ export default function Hero() {
 
           <motion.div
             variants={itemVariants}
-            className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8 h-12 font-medium"
+            className="text-lg sm:text-xl md:text-3xl text-gray-700 dark:text-gray-300 mb-8 min-h-[3rem] sm:min-h-[3.5rem] md:min-h-[3rem] font-medium"
           >
             {text}
             {showCursor && (
-              <span className="inline-block w-0.5 h-8 ml-1 animate-pulse bg-emerald-700 dark:bg-emerald-400" />
+              <span className="inline-block w-0.5 h-6 sm:h-7 md:h-8 ml-1 animate-pulse bg-emerald-700 dark:bg-emerald-400" />
             )}
           </motion.div>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12"
+            className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 px-2"
           >
             Results-driven Computer Engineering student with strong experience in full-stack development, microservices, machine learning, and DevOps. Passionate about AI, Data Science, blockchain technology, and building scalable software systems.
           </motion.p>
