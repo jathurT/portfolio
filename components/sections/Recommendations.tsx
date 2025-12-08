@@ -125,7 +125,7 @@ export default function Recommendations() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="overflow-hidden">
+            <div className="overflow-hidden min-h-[600px] sm:min-h-[550px] md:min-h-[500px] flex items-center">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={currentIndex}
@@ -134,7 +134,7 @@ export default function Recommendations() {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 sm:p-8 md:p-12 relative overflow-hidden border border-emerald-100 dark:border-gray-700"
+                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 sm:p-8 md:p-12 relative overflow-hidden border border-emerald-100 dark:border-gray-700 w-full"
                 >
                   {/* Decorative Background */}
                   <div className="absolute inset-0 opacity-5">
