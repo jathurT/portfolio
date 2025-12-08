@@ -67,6 +67,49 @@ export default function Certifications() {
     setIsModalOpen(true);
   };
 
+  // Generate pagination numbers with ellipsis
+  const getPaginationRange = () => {
+    const range: (number | string)[] = [];
+    const showEllipsisThreshold = 5; // Show ellipsis if more than 2 pages
+
+    if (totalPages <= showEllipsisThreshold) {
+      // Show all pages if total is small
+      for (let i = 1; i <= totalPages; i++) {
+        range.push(i);
+      }
+    } else {
+      // Always show first page
+      range.push(1);
+
+      // Show ellipsis or pages around current page
+      if (currentPage <= 3) {
+        // Near start
+        for (let i = 2; i <= 4; i++) {
+          range.push(i);
+        }
+        range.push('...');
+      } else if (currentPage >= totalPages - 2) {
+        // Near end
+        range.push('...');
+        for (let i = totalPages - 3; i < totalPages; i++) {
+          range.push(i);
+        }
+      } else {
+        // Middle
+        range.push('...');
+        range.push(currentPage - 1);
+        range.push(currentPage);
+        range.push(currentPage + 1);
+        range.push('...');
+      }
+
+      // Always show last page
+      range.push(totalPages);
+    }
+
+    return range;
+  };
+
   return (
     <SectionWrapper
       id="certifications"
@@ -234,13 +277,13 @@ export default function Certifications() {
             className="mt-12 flex flex-col items-center gap-6"
           >
             {/* Page Numbers */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap justify-center">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className={`p-2 rounded-lg transition-all duration-300 ${
+                className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${
                   currentPage === 1
                     ? "bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed"
                     : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-lg border border-gray-300 dark:border-gray-600"
@@ -250,27 +293,40 @@ export default function Certifications() {
                 <HiChevronLeft size={24} />
               </motion.button>
 
-              <div className="flex items-center gap-2">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                  <motion.button
-                    key={page}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={() => handlePageChange(page)}
-                    className={`w-10 h-10 rounded-lg font-semibold transition-all duration-300 ${
-                      currentPage === page
-                        ? "text-white shadow-lg"
-                        : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-lg border border-gray-300 dark:border-gray-600"
-                    }`}
-                    style={
-                      currentPage === page
-                        ? { backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }
-                        : {}
-                    }
-                  >
-                    {page}
-                  </motion.button>
-                ))}
+              <div className="flex items-center gap-2 flex-wrap justify-center">
+                {getPaginationRange().map((page, index) => {
+                  if (page === '...') {
+                    return (
+                      <span
+                        key={`ellipsis-${index}`}
+                        className="w-10 h-10 flex items-center justify-center text-gray-500 dark:text-gray-400 font-semibold flex-shrink-0"
+                      >
+                        ...
+                      </span>
+                    );
+                  }
+
+                  return (
+                    <motion.button
+                      key={page}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => handlePageChange(page as number)}
+                      className={`w-10 h-10 rounded-lg font-semibold transition-all duration-300 flex-shrink-0 ${
+                        currentPage === page
+                          ? "text-white shadow-lg"
+                          : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-lg border border-gray-300 dark:border-gray-600"
+                      }`}
+                      style={
+                        currentPage === page
+                          ? { backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }
+                          : {}
+                      }
+                    >
+                      {page}
+                    </motion.button>
+                  );
+                })}
               </div>
 
               <motion.button
@@ -278,7 +334,7 @@ export default function Certifications() {
                 whileTap={{ scale: 0.9 }}
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className={`p-2 rounded-lg transition-all duration-300 ${
+                className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${
                   currentPage === totalPages
                     ? "bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed"
                     : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-lg border border-gray-300 dark:border-gray-600"

@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { HiExternalLink, HiSearch } from "react-icons/hi";
+import { HiExternalLink, HiSearch, HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { FaGithub } from "react-icons/fa";
 import SectionWrapper from "../ui/SectionWrapper";
 import ProjectModal from "../ui/ProjectModal";
 import projectsData from "@/data/projects.json";
 import { Project } from "@/types";
+
+const ITEMS_PER_PAGE = 6;
 
 export default function Projects() {
   const projects = projectsData as Project[];
@@ -15,6 +17,7 @@ export default function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const categories = ["All", ...new Set(projects.map((p) => p.category))];
 
@@ -30,9 +33,84 @@ export default function Projects() {
     return matchesCategory && matchesSearch;
   });
 
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredProjects.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const paginatedProjects = filteredProjects.slice(startIndex, endIndex);
+
+  // Reset to page 1 when filter changes
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+
+  const handleSearchChange = (value: string) => {
+    setSearchTerm(value);
+    setCurrentPage(1);
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to top of projects section
+    const element = document.getElementById("projects");
+    if (element) {
+      const offset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+    }
+  };
+
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
+  };
+
+  // Generate pagination numbers with ellipsis
+  const getPaginationRange = () => {
+    const range: (number | string)[] = [];
+    const showEllipsisThreshold = 5; // Show ellipsis if more than 5 pages
+
+    if (totalPages <= showEllipsisThreshold) {
+      // Show all pages if total is small
+      for (let i = 1; i <= totalPages; i++) {
+        range.push(i);
+      }
+    } else {
+      // Always show first page
+      range.push(1);
+
+      // Show ellipsis or pages around current page
+      if (currentPage <= 3) {
+        // Near start
+        for (let i = 2; i <= 4; i++) {
+          range.push(i);
+        }
+        range.push('...');
+      } else if (currentPage >= totalPages - 2) {
+        // Near end
+        range.push('...');
+        for (let i = totalPages - 3; i < totalPages; i++) {
+          range.push(i);
+        }
+      } else {
+        // Middle
+        range.push('...');
+        range.push(currentPage - 1);
+        range.push(currentPage);
+        range.push(currentPage + 1);
+        range.push('...');
+      }
+
+      // Always show last page
+      range.push(totalPages);
+    }
+
+    return range;
   };
 
   return (
@@ -65,7 +143,7 @@ export default function Projects() {
                   type="text"
                   placeholder="Search projects..."
                   value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  onChange={(e) => handleSearchChange(e.target.value)}
                   className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2"
                   style={{ "--tw-ring-color": "#2E6F40" } as React.CSSProperties}
                 />
@@ -77,7 +155,7 @@ export default function Projects() {
               {categories.map((category) => (
                 <motion.button
                   key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryChange(category)}
                   className={`px-6 py-2 rounded-lg font-medium transition-all ${
                     selectedCategory === category
                       ? "text-white shadow-lg"
@@ -98,7 +176,7 @@ export default function Projects() {
             layout
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredProjects.map((project, index) => (
+            {paginatedProjects.map((project, index) => (
               <motion.div
                 key={project.id}
                 layout
@@ -192,6 +270,90 @@ export default function Projects() {
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Pagination */}
+          {totalPages > 1 && filteredProjects.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="mt-12 flex flex-col items-center gap-6"
+            >
+              {/* Page Numbers */}
+              <div className="flex items-center gap-2 flex-wrap justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${
+                    currentPage === 1
+                      ? "bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                      : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-lg border border-gray-300 dark:border-gray-600"
+                  }`}
+                  aria-label="Previous page"
+                >
+                  <HiChevronLeft size={24} />
+                </motion.button>
+
+                <div className="flex items-center gap-2 flex-wrap justify-center">
+                  {getPaginationRange().map((page, index) => {
+                    if (page === '...') {
+                      return (
+                        <span
+                          key={`ellipsis-${index}`}
+                          className="w-10 h-10 flex items-center justify-center text-gray-500 dark:text-gray-400 font-semibold flex-shrink-0"
+                        >
+                          ...
+                        </span>
+                      );
+                    }
+
+                    return (
+                      <motion.button
+                        key={page}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        onClick={() => handlePageChange(page as number)}
+                        className={`w-10 h-10 rounded-lg font-semibold transition-all duration-300 flex-shrink-0 ${
+                          currentPage === page
+                            ? "text-white shadow-lg"
+                            : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-lg border border-gray-300 dark:border-gray-600"
+                        }`}
+                        style={
+                          currentPage === page
+                            ? { backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }
+                            : {}
+                        }
+                      >
+                        {page}
+                      </motion.button>
+                    );
+                  })}
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${
+                    currentPage === totalPages
+                      ? "bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                      : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-lg border border-gray-300 dark:border-gray-600"
+                  }`}
+                  aria-label="Next page"
+                >
+                  <HiChevronRight size={24} />
+                </motion.button>
+              </div>
+
+              {/* Page Info */}
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                Page {currentPage} of {totalPages} • Showing {paginatedProjects.length} of {filteredProjects.length} projects
+              </div>
+            </motion.div>
+          )}
 
           {/* No Results */}
           {filteredProjects.length === 0 && (

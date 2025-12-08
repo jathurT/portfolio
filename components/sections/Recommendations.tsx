@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaLinkedin, FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaLinkedin, FaQuoteLeft } from "react-icons/fa";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import SectionWrapper from "../ui/SectionWrapper";
 import recommendationsData from "@/data/recommendations.json";
 import { Recommendation } from "@/types";
@@ -64,6 +65,49 @@ export default function Recommendations() {
     if (allRecsSection) {
       allRecsSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  // Generate pagination numbers with ellipsis
+  const getPaginationRange = () => {
+    const range: (number | string)[] = [];
+    const showEllipsisThreshold = 5; // Show ellipsis if more than 5 pages
+
+    if (totalPages <= showEllipsisThreshold) {
+      // Show all pages if total is small
+      for (let i = 1; i <= totalPages; i++) {
+        range.push(i);
+      }
+    } else {
+      // Always show first page
+      range.push(1);
+
+      // Show ellipsis or pages around current page
+      if (currentPage <= 3) {
+        // Near start
+        for (let i = 2; i <= 4; i++) {
+          range.push(i);
+        }
+        range.push('...');
+      } else if (currentPage >= totalPages - 2) {
+        // Near end
+        range.push('...');
+        for (let i = totalPages - 3; i < totalPages; i++) {
+          range.push(i);
+        }
+      } else {
+        // Middle
+        range.push('...');
+        range.push(currentPage - 1);
+        range.push(currentPage);
+        range.push(currentPage + 1);
+        range.push('...');
+      }
+
+      // Always show last page
+      range.push(totalPages);
+    }
+
+    return range;
   };
 
   // Slide variants for smooth animations
@@ -203,7 +247,7 @@ export default function Recommendations() {
               style={{ backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }}
               aria-label="Previous recommendation"
             >
-              <FaChevronLeft size={20} />
+              <HiChevronLeft size={20} />
             </button>
             <button
               onClick={nextRecommendation}
@@ -211,7 +255,7 @@ export default function Recommendations() {
               style={{ backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }}
               aria-label="Next recommendation"
             >
-              <FaChevronRight size={20} />
+              <HiChevronRight size={20} />
             </button>
 
             {/* Dots Indicator */}
@@ -305,50 +349,73 @@ export default function Recommendations() {
           {totalPages > 1 && (
             <div className="flex justify-center items-center gap-2 flex-wrap">
               {/* Previous Button */}
-              <button
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={() => goToPage(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="px-4 py-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 text-white"
-                style={{
-                  backgroundImage: currentPage === 1 ? "linear-gradient(to right, #9CA3AF, #9CA3AF)" : "linear-gradient(to right, #2E6F40, #00674F)"
-                }}
+                className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${
+                  currentPage === 1
+                    ? "bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-lg border border-gray-300 dark:border-gray-600"
+                }`}
+                aria-label="Previous page"
               >
-                Previous
-              </button>
+                <HiChevronLeft size={24} />
+              </motion.button>
 
               {/* Page Numbers */}
-              <div className="flex gap-2">
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                  <button
-                    key={page}
-                    onClick={() => goToPage(page)}
-                    className={`w-10 h-10 rounded-lg font-medium transition-all hover:scale-105 ${
-                      currentPage === page
-                        ? "text-white shadow-lg"
-                        : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
-                    }`}
-                    style={
-                      currentPage === page
-                        ? { backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }
-                        : {}
-                    }
-                  >
-                    {page}
-                  </button>
-                ))}
+              <div className="flex gap-2 flex-wrap justify-center">
+                {getPaginationRange().map((page, index) => {
+                  if (page === '...') {
+                    return (
+                      <span
+                        key={`ellipsis-${index}`}
+                        className="w-10 h-10 flex items-center justify-center text-gray-500 dark:text-gray-400 font-medium flex-shrink-0"
+                      >
+                        ...
+                      </span>
+                    );
+                  }
+
+                  return (
+                    <motion.button
+                      key={page}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      onClick={() => goToPage(page as number)}
+                      className={`w-10 h-10 rounded-lg font-medium transition-all duration-300 flex-shrink-0 ${
+                        currentPage === page
+                          ? "text-white shadow-lg"
+                          : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
+                      }`}
+                      style={
+                        currentPage === page
+                          ? { backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }
+                          : {}
+                      }
+                    >
+                      {page}
+                    </motion.button>
+                  );
+                })}
               </div>
 
               {/* Next Button */}
-              <button
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 onClick={() => goToPage(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="px-4 py-2 rounded-lg font-medium transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 text-white"
-                style={{
-                  backgroundImage: currentPage === totalPages ? "linear-gradient(to right, #9CA3AF, #9CA3AF)" : "linear-gradient(to right, #2E6F40, #00674F)"
-                }}
+                className={`p-2 rounded-lg transition-all duration-300 flex-shrink-0 ${
+                  currentPage === totalPages
+                    ? "bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-lg border border-gray-300 dark:border-gray-600"
+                }`}
+                aria-label="Next page"
               >
-                Next
-              </button>
+                <HiChevronRight size={24} />
+              </motion.button>
             </div>
           )}
         </div>
