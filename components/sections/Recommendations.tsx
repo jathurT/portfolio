@@ -125,7 +125,7 @@ export default function Recommendations() {
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            <div className="overflow-hidden min-h-[600px] sm:min-h-[550px] md:min-h-[500px] flex items-center">
+            <div className="overflow-hidden h-[700px] sm:h-[600px] md:h-[550px] flex items-center">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={currentIndex}
@@ -134,7 +134,7 @@ export default function Recommendations() {
                   initial="enter"
                   animate="center"
                   exit="exit"
-                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 sm:p-8 md:p-12 relative overflow-hidden border border-emerald-100 dark:border-gray-700 w-full"
+                  className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 sm:p-8 md:p-12 relative border border-emerald-100 dark:border-gray-700 w-full h-full flex flex-col overflow-hidden"
                 >
                   {/* Decorative Background */}
                   <div className="absolute inset-0 opacity-5">
@@ -146,9 +146,9 @@ export default function Recommendations() {
                     <FaQuoteLeft size={60} className="text-emerald-600 sm:w-20 sm:h-20" />
                   </div>
 
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     {/* Recommender Info */}
-                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-6">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 mb-4 flex-shrink-0">
                       <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center text-white text-3xl sm:text-4xl font-bold shadow-lg flex-shrink-0" style={{ backgroundImage: "linear-gradient(to right, #2E6F40, #00674F)" }}>
                         {recommendations[currentIndex].name.charAt(0)}
                       </div>
@@ -175,14 +175,14 @@ export default function Recommendations() {
                     </div>
 
                     {/* Recommendation Text */}
-                    <div className="bg-emerald-50/50 dark:bg-gray-700/50 rounded-xl p-6 mb-6">
-                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base sm:text-lg italic">
+                    <div className="bg-emerald-50/50 dark:bg-gray-700/50 rounded-xl p-4 sm:p-6 mb-4 flex-1 overflow-y-auto min-h-0">
+                      <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg italic">
                         "{recommendations[currentIndex].recommendation}"
                       </p>
                     </div>
 
                     {/* Date */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between flex-shrink-0">
                       <p className="text-sm text-gray-500 dark:text-gray-400">
                         {recommendations[currentIndex].date}
                       </p>
