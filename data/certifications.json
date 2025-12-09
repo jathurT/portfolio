@@ -1,5 +1,15 @@
 [
   {
+    "id": "cert-27",
+    "name": "Go (Basic)",
+    "issuingOrganization": "HackerRank",
+    "issueDate": "2025-12",
+    "credentialId": "4db201f52a49",
+    "credentialUrl": "https://www.hackerrank.com/certificates/4db201f52a49",
+    "skills": ["Go (Golang)"],
+    "description": "Fundamental Go programming concepts including syntax, data types, control structures, functions, and building simple applications using Go's concurrency features."
+  },
+  {
     "id": "cert-1",
     "name": "Complete Python For Absolute Beginners",
     "issuingOrganization": "Udemy",
