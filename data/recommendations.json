@@ -58,5 +58,17 @@
     "date": "December 7, 2025",
     "recommendation": "I am pleased to recommend Jathurshan, who successfully completed his internship as a Software Engineering Intern in our team. As the Business Analyst working closely with him throughout his internship, I had the opportunity to observe his work, technical capability, and overall contribution to the team. From the very beginning, he demonstrated exceptional agility, quickly adapting to our fast-paced and highly dynamic environment. Unlike a typical intern who performs only assigned tasks, he consistently operated at a Software Engineer level, taking full ownership of his work, proactively identifying solutions, and delivering beyond expectations. He was highly solution-oriented, always willing to explore alternatives, refine approaches, and ensure that the final output met both technical and business requirements. His dedication to delivering the best possible solution was evident in every sprint. He collaborated well with a cross-functional team including other BAs, QAs, and developers. He was supportive and genuinely helpful, often stepping in to assist others and contributing to smooth delivery cycles. Based on his performance, I can confidently recommend him for any Software Engineering role. He has already demonstrated the mindset, capability, and agility needed to perform at an industry-ready level. He will undoubtedly be an asset to any team he joins.",
     "featured": true
+  },
+  {
+    "id": "rec-6",
+    "name": "Rashmi Prabhath",
+    "position": "Lead Software Engineer",
+    "company": "IronOne Technologies",
+    "relationship": "Direct Manager",
+    "image": "/images/testimonials/rashmi.jpg",
+    "linkedinUrl": "https://www.linkedin.com/in/rashmi-prabhath",
+    "date": "December 15, 2025",
+    "recommendation": "I had the pleasure of mentoring Jathurshan during his internship, and I was consistently impressed by his technical knowledge, quick learning curve, and strong productivity. He demonstrated a professional attitude and a remarkable ability to deliver requirements on time, even when faced with challenging situations. Jathurshan quickly grasped the domain and went beyond expectations by putting in extra effort to ensure project success. His commitment, reliability, and willingness to take ownership made a real difference to the team. I am confident that Jathurshan will excel in any future role he takes on, and I highly recommend him to any organization looking for a dedicated and capable professional.",
+    "featured": true
   }
 ]
