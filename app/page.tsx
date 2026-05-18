@@ -1,5 +1,5 @@
-import PortfolioWrapper from "@/components/sections/PortfolioWrapper";
+import PortfolioClient from "@/components/PortfolioClient";
 
 export default function Home() {
-  return <PortfolioWrapper />;
+  return <PortfolioClient />;
 }

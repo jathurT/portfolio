@@ -1,21 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/providers/ThemeProvider";
-import CustomCursor from "@/components/ui/CustomCursor";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
-  title: "Jathurshan Thadchanamoorthy | Software Engineer & Computer Engineering Student",
+  title:
+    "Jathurshan Thadchanamoorthy | Software Engineer & Computer Engineering Student",
   description:
     "Computer Engineering undergraduate at University of Ruhuna (GPA: 3.91) and Software Engineer Intern at IronOne. Specializing in Spring Boot, React, Machine Learning, and DevOps.",
   keywords: [
@@ -39,7 +27,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://jathurshan.dev",
-    title: "Jathurshan Thadchanamoorthy | Software Engineer & Computer Engineering Student",
+    title:
+      "Jathurshan Thadchanamoorthy | Software Engineer & Computer Engineering Student",
     description:
       "Computer Engineering undergraduate at University of Ruhuna (GPA: 3.91) and Software Engineer Intern at IronOne. Specializing in Spring Boot, React, Machine Learning, and DevOps.",
     siteName: "Jathurshan's Portfolio",
@@ -54,7 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jathurshan Thadchanamoorthy | Software Engineer & Computer Engineering Student",
+    title:
+      "Jathurshan Thadchanamoorthy | Software Engineer & Computer Engineering Student",
     description:
       "Computer Engineering undergraduate at University of Ruhuna specializing in Spring Boot, React, Machine Learning, and DevOps.",
     images: ["https://jathurshan.dev/og-image.jpg"],
@@ -73,15 +63,33 @@ export const metadata: Metadata = {
   },
 };
 
+const themeScript = `(function(){try{var s=localStorage.getItem("theme");var p=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",s||p);}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7SMM659P9"></script>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Geist:wght@300;400;500;600&display=swap"
+        />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-N7SMM659P9"
+        ></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -93,20 +101,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        suppressHydrationWarning
-      >
-        <CustomCursor />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          {children}
-        </ThemeProvider>
-      </body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

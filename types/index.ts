@@ -1,69 +1,97 @@
-export interface Project {
-  id: string;
+// ---- prototype data shapes (claude-design) ----
+
+export interface Socials {
+  github: string;
+  linkedin: string;
+  leetcode: string;
+  medium: string;
+}
+
+export interface Person {
+  name: string;
+  fullName: string;
   title: string;
-  description: string;
-  longDescription: string;
-  technologies: string[];
-  images: string[];
-  liveUrl: string;
-  githubUrl: string;
-  featured: boolean;
-  category: string;
-  startDate: string;
-  endDate: string;
-}
-
-export interface Skill {
-  name: string;
-  proficiency: number;
-  icon: string;
-  yearsOfExperience: number;
-}
-
-export interface SkillCategory {
-  category: string;
-  skills: Skill[];
-}
-
-export interface Experience {
-  id: string;
-  company: string;
-  position: string;
   location: string;
-  type: string;
-  startDate: string;
-  endDate: string | null;
-  current: boolean;
-  description: string;
-  responsibilities: string[];
-  technologies: string[];
-}
-
-export interface ContactFormData {
-  name: string;
+  statement: string;
+  bio: string[];
   email: string;
-  subject: string;
-  message: string;
+  socials: Socials;
+  intern: string;
+  timezone: string;
 }
 
-export interface EmailResponse {
-  success: boolean;
-  message: string;
-  error?: string;
+export interface Fact {
+  v: string;
+  l: string;
 }
 
-export interface Recommendation {
-  id: string;
+export interface ExperienceItem {
+  company: string;
+  role: string;
+  dates: string;
+  summary: string;
+  stack: string[];
+}
+
+export type ProjectMockKind =
+  | "sms"
+  | "dental"
+  | "ml"
+  | "hotel"
+  | "cloud"
+  | "blockchain";
+
+export interface FeaturedProject {
+  year: string;
+  title: string;
+  desc: string;
+  stack: string[];
+  live: string | null;
+  github: string | null;
+  demo?: string | null;
+  mock: ProjectMockKind;
+}
+
+export interface ArchiveItem {
+  year: string;
+  title: string;
+  stack: string[];
+  github?: string;
+}
+
+export interface SkillCat {
+  cat: string;
+  items: [string, string][];
+}
+
+export type RecTint =
+  | "violet"
+  | "emerald"
+  | "amber"
+  | "sky"
+  | "coral"
+  | "rose";
+
+export interface Rec {
   name: string;
-  position: string;
+  role: string;
   company: string;
   relationship: string;
-  image: string;
-  linkedinUrl: string;
+  initials: string;
+  tint: RecTint;
   date: string;
-  recommendation: string;
-  featured: boolean;
+  pull: string;
+  quote: string;
+  featured?: boolean;
 }
+
+export interface WritingItem {
+  date: string;
+  title: string;
+  read: string;
+}
+
+// ---- re-added sections (existing JSON data) ----
 
 export interface Certification {
   id: string;
@@ -73,7 +101,6 @@ export interface Certification {
   credentialId: string;
   credentialUrl: string;
   skills: string[];
-  image: string;
   description: string;
 }
 
@@ -89,4 +116,28 @@ export interface Achievement {
   icon: string;
   color: string;
   category: string;
+}
+
+// ---- contact form (EmailJS) ----
+
+export interface ContactFormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+// ---- full portfolio data contract ----
+
+export interface PortfolioData {
+  person: Person;
+  facts: Fact[];
+  experience: ExperienceItem[];
+  featured: FeaturedProject[];
+  archive: ArchiveItem[];
+  skills: SkillCat[];
+  recommendations: Rec[];
+  writing: WritingItem[];
+  achievements: Achievement[];
+  certifications: Certification[];
 }
