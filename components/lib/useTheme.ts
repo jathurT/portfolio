@@ -5,12 +5,12 @@ import { useEffect, useState } from "react";
 type Theme = "dark" | "light";
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>("light");
 
   // sync with the data-theme set by the no-flash script before paint
   useEffect(() => {
     const current =
-      (document.documentElement.getAttribute("data-theme") as Theme) || "dark";
+      (document.documentElement.getAttribute("data-theme") as Theme) || "light";
     setTheme(current);
   }, []);
 

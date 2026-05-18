@@ -69,7 +69,9 @@ export const metadata: Metadata = {
   },
 };
 
-const themeScript = `(function(){try{var s=localStorage.getItem("theme");var p=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",s||p);}catch(e){}})();`;
+// Default theme is LIGHT. A saved toggle choice still wins; otherwise light
+// (system preference is intentionally ignored so the site opens light).
+const themeScript = `(function(){try{var s=localStorage.getItem("theme");document.documentElement.setAttribute("data-theme",(s==="dark"||s==="light")?s:"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();`;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -125,7 +127,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
 
