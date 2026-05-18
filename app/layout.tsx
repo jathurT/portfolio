@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const SITE_URL = "https://jathurt.me";
+// Vercel serves the site at the www subdomain (apex 307-redirects to www),
+// so the canonical / OG / structured-data URL must be the www host.
+const SITE_URL = "https://www.jathurt.me";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

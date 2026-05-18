@@ -7,6 +7,6 @@ export default function robots() {
         disallow: '/api/',
       },
     ],
-    sitemap: 'https://jathurt.me/sitemap.xml',
+    sitemap: 'https://www.jathurt.me/sitemap.xml',
   };
 }
