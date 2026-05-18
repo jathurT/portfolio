@@ -1,53 +1,57 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const SITE_URL = "https://jathurt.me";
+
 export const metadata: Metadata = {
-  title:
-    "Jathurshan Thadchanamoorthy | Software Engineer & Computer Engineering Student",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default:
+      "Jathurshan Thadchanamoorthy — Software Engineer | jathurT",
+    template: "%s | Jathurshan Thadchanamoorthy",
+  },
   description:
-    "Computer Engineering undergraduate at University of Ruhuna (GPA: 3.91) and Software Engineer Intern at IronOne. Specializing in Spring Boot, React, Machine Learning, and DevOps.",
+    "Jathurshan Thadchanamoorthy (jathurT) — software engineer and Computer Engineering undergraduate at the University of Ruhuna, ex-IronOne SWE intern. Java, Spring Boot, Quarkus, React, DevOps, ML and blockchain.",
+  applicationName: "Jathurshan Thadchanamoorthy",
   keywords: [
+    "Jathurshan",
     "Jathurshan Thadchanamoorthy",
+    "jathurT",
+    "jathurt",
+    "jathurshan portfolio",
     "Software Engineer",
     "Computer Engineering",
-    "Spring Boot",
-    "React",
-    "Machine Learning",
-    "DevOps",
     "University of Ruhuna",
     "IronOne",
-    "Full Stack Developer",
-    "Java",
-    "Python",
+    "Spring Boot",
+    "Quarkus",
+    "React",
+    "TypeScript",
+    "DevOps",
+    "Machine Learning",
+    "Blockchain",
     "Sri Lanka",
   ],
-  authors: [{ name: "Jathurshan Thadchanamoorthy" }],
+  authors: [{ name: "Jathurshan Thadchanamoorthy", url: SITE_URL }],
   creator: "Jathurshan Thadchanamoorthy",
+  publisher: "Jathurshan Thadchanamoorthy",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jathurshan.dev",
-    title:
-      "Jathurshan Thadchanamoorthy | Software Engineer & Computer Engineering Student",
+    url: SITE_URL,
+    siteName: "Jathurshan Thadchanamoorthy",
+    title: "Jathurshan Thadchanamoorthy — Software Engineer",
     description:
-      "Computer Engineering undergraduate at University of Ruhuna (GPA: 3.91) and Software Engineer Intern at IronOne. Specializing in Spring Boot, React, Machine Learning, and DevOps.",
-    siteName: "Jathurshan's Portfolio",
-    images: [
-      {
-        url: "https://jathurshan.dev/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Jathurshan Thadchanamoorthy - Software Engineer",
-      },
-    ],
+      "Software engineer and Computer Engineering undergraduate at the University of Ruhuna, ex-IronOne SWE intern. Building reliable systems — full-stack, infra, ML, and a bit of chain.",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Jathurshan Thadchanamoorthy | Software Engineer & Computer Engineering Student",
+    title: "Jathurshan Thadchanamoorthy — Software Engineer",
     description:
-      "Computer Engineering undergraduate at University of Ruhuna specializing in Spring Boot, React, Machine Learning, and DevOps.",
-    images: ["https://jathurshan.dev/og-image.jpg"],
+      "Software engineer · ex-IronOne intern · University of Ruhuna. Full-stack, DevOps, ML, blockchain.",
     creator: "@jathurT",
   },
   robots: {
@@ -64,6 +68,54 @@ export const metadata: Metadata = {
 };
 
 const themeScript = `(function(){try{var s=localStorage.getItem("theme");var p=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.setAttribute("data-theme",s||p);}catch(e){}})();`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Jathurshan Thadchanamoorthy",
+      alternateName: ["Jathurshan", "jathurT", "Jathurshan T"],
+      url: SITE_URL,
+      image: `${SITE_URL}/apple-icon`,
+      jobTitle: "Software Engineer",
+      description:
+        "Software engineer and Computer Engineering undergraduate at the University of Ruhuna; ex-IronOne software engineering intern.",
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "University of Ruhuna",
+      },
+      knowsAbout: [
+        "Software Engineering",
+        "Java",
+        "Spring Boot",
+        "Quarkus",
+        "React",
+        "TypeScript",
+        "DevOps",
+        "Machine Learning",
+        "Blockchain",
+      ],
+      sameAs: [
+        "https://github.com/jathurT",
+        "https://linkedin.com/in/jathurt",
+        "https://leetcode.com/ktmjathur2001",
+        "https://medium.com/@jathurt",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Jathurshan Thadchanamoorthy",
+      description:
+        "Portfolio of Jathurshan Thadchanamoorthy — software engineer.",
+      publisher: { "@id": `${SITE_URL}/#person` },
+      inLanguage: "en",
+    },
+  ],
+};
 
 export default function RootLayout({
   children,
@@ -84,6 +136,11 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Geist:wght@300;400;500;600&display=swap"
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
         <script
