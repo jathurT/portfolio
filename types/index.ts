@@ -39,7 +39,8 @@ export type ProjectMockKind =
   | "ml"
   | "hotel"
   | "cloud"
-  | "blockchain";
+  | "blockchain"
+  | "pillpin";
 
 export interface FeaturedProject {
   year: string;

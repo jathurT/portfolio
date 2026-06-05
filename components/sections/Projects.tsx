@@ -326,6 +326,60 @@ function ProjectMock({ kind }: { kind: ProjectMockKind }) {
     );
   }
 
+  if (kind === "pillpin") {
+    return (
+      <div className="mockwin">
+        <Bar url="pillpin · find-a-med" />
+        <div className="body mock-cloud">
+          <svg className="conn" viewBox="0 0 320 200" preserveAspectRatio="none">
+            <path
+              d="M160,34 L80,86"
+              stroke="var(--border-strong)"
+              strokeWidth="1"
+              strokeDasharray="3 3"
+              fill="none"
+            />
+            <path
+              d="M160,34 L160,86"
+              stroke="var(--border-strong)"
+              strokeWidth="1"
+              strokeDasharray="3 3"
+              fill="none"
+            />
+            <path
+              d="M160,34 L240,86"
+              stroke="var(--border-strong)"
+              strokeWidth="1"
+              strokeDasharray="3 3"
+              fill="none"
+            />
+          </svg>
+          <div className="grid">
+            <div className="node api">
+              <span className="dot" />
+              rotating proxy mesh
+            </div>
+            <div className="node">
+              <span className="dot" />
+              Boots · UK
+            </div>
+            <div className="node">
+              <span className="dot" />
+              Apollo · IN
+            </div>
+            <div className="node">
+              <span className="dot" />
+              Osusala · LK
+            </div>
+            <div className="node">Gemini normalizer</div>
+            <div className="node">FastAPI · /availability</div>
+            <div className="node db">postgres · current + history</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (kind === "blockchain") {
     return (
       <div className="mockwin">
